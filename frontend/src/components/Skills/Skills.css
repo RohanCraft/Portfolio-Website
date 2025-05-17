@@ -1,0 +1,124 @@
+:root {
+  --color-bg-light: #ffffff;
+  --color-text-light: #1f2937;
+  --color-skill-bg-light: #f9fafb;
+  --color-skill-hover-light: #e5e7eb;
+
+  --color-bg-dark: #18181b;
+  --color-text-dark: #f3f4f6;
+  --color-skill-bg-dark: #27272a;
+  --color-skill-hover-dark: #3f3f46;
+
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-section {
+  padding: 4rem 2rem;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  text-align: center;
+  animation: fadeInUp 0.6s ease forwards;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark .skills-section {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.skill-item {
+  background-color: var(--color-skill-bg-light);
+  padding: 1.25rem 1.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  box-shadow: 0 6px 15px var(--shadow-light);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 130px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}
+
+.skill-item:hover {
+  transform: scale(1.07) rotate(-1deg);
+  background-color: var(--color-skill-hover-light);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+body.dark .skill-item {
+  background-color: var(--color-skill-bg-dark);
+  color: var(--color-text-dark);
+  box-shadow: 0 6px 15px var(--shadow-dark);
+}
+
+body.dark .skill-item:hover {
+  background-color: var(--color-skill-hover-dark);
+  box-shadow: 0 10px 22px rgba(147, 197, 253, 0.35);
+}
+
+.skill-icon {
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .skill-item {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    min-width: 110px;
+  }
+
+  .skill-icon {
+    font-size: 2.25rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+}

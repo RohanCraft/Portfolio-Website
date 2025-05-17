@@ -1,0 +1,108 @@
+:root {
+  --color-bg-light-alt: #f8fafc;
+  --color-text-light: #1f2937;
+
+  --color-bg-dark-alt: #1f1f23;
+  --color-text-dark: #f3f4f6;
+
+  --color-skill-bg-light: #f9fafb;
+  --color-skill-bg-dark: #27272a;
+
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-section {
+  padding: 3rem 1.5rem;
+  background-color: var(--color-bg-light-alt);
+  color: var(--color-text-light);
+  animation: fadeInUp 0.6s ease forwards;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark .projects-section {
+  background-color: var(--color-bg-dark-alt);
+  color: var(--color-text-dark);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: var(--color-skill-bg-light);
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px var(--shadow-light);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.2);
+}
+
+body.dark .project-card {
+  background-color: var(--color-skill-bg-dark);
+  box-shadow: 0 6px 15px var(--shadow-dark);
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+body.dark .project-description {
+  color: #d1d5db;
+}
+
+.project-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+body.dark .project-link {
+  color: #3b82f6;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}

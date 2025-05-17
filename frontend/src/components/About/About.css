@@ -1,0 +1,67 @@
+:root {
+  --color-text-light: #1f2937;
+  --color-text-dark: #f3f4f6;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background-color: #f3f4f6; /* Light grey background to distinguish */
+  color: var(--color-text-light);
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  line-height: 1.65;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.about-text strong {
+  color: #007BFF; /* Highlight your name with the primary blue */
+}
+
+/* === Dark Mode Support === */
+body.dark .about-container {
+  background-color: #232326; /* Darker background for contrast */
+  color: var(--color-text-dark);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .about-title {
+  color: var(--color-text-dark);
+}
+
+body.dark .about-text {
+  color: #ccc;
+}
+
+body.dark .about-text strong {
+  color: #3b82f6; /* lighter blue in dark mode */
+}
