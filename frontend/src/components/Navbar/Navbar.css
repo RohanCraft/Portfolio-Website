@@ -17,7 +17,7 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0.75rem 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
   position: sticky;
@@ -27,7 +27,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 
 body.dark .navbar {
   background-color: var(--color-bg-dark);
@@ -119,7 +118,7 @@ body.dark .navbar {
   color: var(--primary-hover);
 }
 
-/* Responsive: show hamburger and hide links on small screens */
+/* Mobile Menu from TOP */
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
@@ -129,26 +128,27 @@ body.dark .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 220px;
+    width: 100%;
     background-color: var(--color-bg-light);
     flex-direction: column;
-    padding-top: 4rem;
-    gap: 1.8rem;
-    transform: translateX(-100%);
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    gap: 1.5rem;
+    transform: translateY(-100%);
     transition: transform 0.3s ease;
-    box-shadow: 4px 0 12px var(--shadow-light);
+    box-shadow: 0 4px 12px var(--shadow-light);
     z-index: 1000;
-    border-radius: 0 12px 12px 0;
+    border-radius: 0 0 12px 12px;
   }
 
   body.dark .nav-links {
     background-color: var(--color-bg-dark);
-    box-shadow: 4px 0 16px var(--shadow-dark);
+    box-shadow: 0 4px 16px var(--shadow-dark);
   }
 
   .nav-links.open {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .nav-links li a {
