@@ -1,18 +1,37 @@
 import './HeroSection.css';
 import profilePic from '../../assets/profilePic.jpg';
+import { FaDownload } from "react-icons/fa";
+
 
 const HeroSection = () => {
   return (
     <section id="home" className="hero-section">
-      <img src={profilePic} alt="Rohan Kumar Sahoo" className="hero-profile-pic" />
+      <img
+        src={profilePic}
+        alt="Rohan Kumar Sahoo"
+        className="hero-profile-pic"
+      />
       <div className="hero-content">
-        <h1 className="hero-title">Hi, I'm <span>Rohan Kumar Sahoo</span></h1>
+        <h1 className="hero-title">
+          Hi, I'm <span>Rohan Kumar Sahoo</span>
+        </h1>
         <p className="hero-subtitle">
-          A passionate Frontend Developer who builds modern, responsive, and accessible web applications.
+          Crafting sleek, responsive, and high-performance web applications with
+          a focus on clean design and exceptional user experience. Always ready
+          to bring ideas to life through code.
         </p>
         <div className="hero-buttons">
-          <a href="https://github.com/RohanCraft" className="hero-button primary">View Projects</a>
-          <a href="#contact" className="hero-button secondary">Hire Me</a>
+          <a
+            href="/Rohan_Kumar_Sahoo_MERN_Developer_Resume.pdf"
+            download="Rohan_Kumar_Sahoo_Resume.pdf"
+            className="hero-button primary"
+          >
+            <FaDownload style={{ marginRight: "8px" }} />
+            Download Resume
+          </a>
+          <a href="#contact" className="hero-button secondary">
+            Hire Me
+          </a>
         </div>
       </div>
     </section>
