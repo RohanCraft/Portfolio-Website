@@ -1,3 +1,100 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
+
+  /* Light mode: layered blue-purple gradient */
+  background: linear-gradient(
+    135deg,
+    #89b0ae 0%,        /* Soft teal */
+    #a2d5c6 30%,       /* Light minty green */
+    #f3eac2 70%,       /* Warm pastel yellow */
+    #f6f5f5 100%       /* Almost white */
+  );
+
+  color: #1a202c;
+  transition: background 0.6s ease, color 0.6s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: transparent;
+}
+
+/* Dark mode: deep layered blue-purple */
+body.dark, html.dark {
+  background: linear-gradient(
+    135deg,
+    #0f2027 0%,        /* Very dark blue */
+    #203a43 60%,       /* Dark slate blue */
+    #2c5364 100%       /* Muted teal */
+  );
+  color: #e2e8f0;
+}
+
+/* Box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Links */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover, a:focus {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 3.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  backdrop-filter: saturate(180%) blur(8px);
+}
+
+body.dark section {
+  background-color: rgba(30, 40, 55, 0.95);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: saturate(220%) blur(12px);
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+body.dark::-webkit-scrollbar-thumb {
+  background: #a5b4fc;
+}
+
+/* Responsive font */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
 }

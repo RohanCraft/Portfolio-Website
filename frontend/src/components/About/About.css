@@ -1,6 +1,13 @@
 :root {
   --color-text-light: #1f2937;
   --color-text-dark: #f3f4f6;
+
+  /* About section background gradients */
+  --about-bg-light-start: #e0e7ff;
+  --about-bg-light-end: #c7d2fe;
+
+  --about-bg-dark-start: #1f2937;
+  --about-bg-dark-end: #2563eb;
 }
 
 @keyframes fadeInUp {
@@ -14,44 +21,58 @@
   }
 }
 
+.about-section {
+  padding: 2rem 1rem;
+}
+
 .about-container {
   max-width: 800px;
   margin: 2.5rem auto;
-  padding: 2rem;
-  background-color: #f3f4f6; /* Light grey background to distinguish */
+  padding: 2.5rem 3rem;
+  background: linear-gradient(
+    135deg,
+    var(--about-bg-light-start),
+    var(--about-bg-light-end)
+  );
   color: var(--color-text-light);
-  border-radius: 1rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  line-height: 1.65;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background 0.5s ease, color 0.5s ease;
   animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .about-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: inherit;
   text-align: center;
+  letter-spacing: 0.03em;
   transition: color 0.3s ease;
 }
 
 .about-text {
-  font-size: 1.1rem;
-  margin-bottom: 1.25rem;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .about-text strong {
-  color: #007BFF; /* Highlight your name with the primary blue */
+  color: #2563eb; /* slightly deeper blue for better highlight */
+  font-weight: 700;
 }
 
 /* === Dark Mode Support === */
 body.dark .about-container {
-  background-color: #232326; /* Darker background for contrast */
+  background: linear-gradient(
+    135deg,
+    var(--about-bg-dark-start),
+    var(--about-bg-dark-end)
+  );
   color: var(--color-text-dark);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
 body.dark .about-title {
@@ -59,9 +80,9 @@ body.dark .about-title {
 }
 
 body.dark .about-text {
-  color: #ccc;
+  color: #d1d5db;
 }
 
 body.dark .about-text strong {
-  color: #3b82f6; /* lighter blue in dark mode */
+  color: #60a5fa; /* lighter blue for dark mode */
 }
