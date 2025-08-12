@@ -66,12 +66,24 @@ body.dark .projects-section {
   text-align: center;
   font-size: 2.75rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.05em;
   user-select: none;
   background: linear-gradient(135deg, #4f46e5, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.projects-intro {
+  text-align: center;
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0 auto 3rem auto;
+}
+
+body.dark .projects-intro {
+  color: #d1d5db;
 }
 
 .projects-grid {
@@ -86,7 +98,6 @@ body.dark .projects-section {
   box-shadow: 0 6px 15px var(--shadow-light);
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  cursor: default;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,7 +106,7 @@ body.dark .projects-section {
 .project-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 16px 40px rgba(59, 130, 246, 0.3);
-  background-color: #e0e7ff; /* soft light blue highlight */
+  background-color: #e0e7ff;
 }
 
 body.dark .project-card {
@@ -104,22 +115,21 @@ body.dark .project-card {
 }
 
 body.dark .project-card:hover {
-  background-color: #374151; /* darker hover background */
+  background-color: #374151;
   box-shadow: 0 16px 40px rgba(59, 130, 246, 0.6);
 }
 
 .project-title {
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: inherit;
+  margin-bottom: 0.6rem;
 }
 
 .project-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #4b5563;
   margin-bottom: 1.5rem;
-  transition: color 0.3s ease;
+  line-height: 1.5;
   flex-grow: 1;
 }
 
@@ -131,16 +141,18 @@ body.dark .project-description {
   color: #2563eb;
   text-decoration: none;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   transition: color 0.3s ease;
-  align-self: flex-start;
-}
-
-body.dark .project-link {
-  color: #3b82f6;
 }
 
 .project-link:hover {
   text-decoration: underline;
+}
+
+body.dark .project-link {
+  color: #3b82f6;
 }
 
 /* Responsive */
@@ -148,11 +160,9 @@ body.dark .project-link {
   .projects-title {
     font-size: 2.25rem;
   }
-
   .project-card {
     padding: 1.5rem;
   }
-
   .project-title {
     font-size: 1.4rem;
   }
@@ -162,11 +172,9 @@ body.dark .project-link {
   .projects-grid {
     gap: 1.2rem;
   }
-
   .project-card {
     padding: 1rem;
   }
-
   .project-title {
     font-size: 1.2rem;
   }

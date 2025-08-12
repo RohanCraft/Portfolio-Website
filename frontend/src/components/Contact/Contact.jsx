@@ -51,6 +51,7 @@ const Contact = () => {
               title={label}
             >
               <span className="icon">{icon}</span>
+              <span className="label">{label}</span>
             </a>
           ))}
         </div>

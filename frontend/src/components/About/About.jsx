@@ -6,23 +6,39 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="about-container">
         <h2 className="about-title">About Me</h2>
-        <p className="about-text">
-          Hello! I'm <strong>Rohan Kumar Sahoo</strong>, currently pursuing my
-          Master's in Computer Applications (MCA) at Indira Gandhi Institute of
-          Technology. I hold a Bachelor's degree in Computer Science, which has
-          provided me a solid foundation in software development.
+        <p className="about-intro">
+          Hi, I'm <strong>Rohan Kumar Sahoo</strong> — a passionate{" "}
+          <strong>MERN Stack Developer</strong> with a love for building clean,
+          scalable, and user-friendly web applications.
         </p>
-        <p className="about-text">
-          I specialize in the MERN stack — MongoDB, Express.js, React, and
-          Node.js — with a passion for building efficient, scalable, and
-          user-friendly web applications.
-        </p>
-        <p className="about-text">
-          I enjoy learning new technologies and sharpening my skills daily.
-          Motivated by solving complex problems, I strive to create impactful
-          digital experiences. I'm eager to contribute to innovative projects
-          and grow as a developer.
-        </p>
+
+        <div className="about-highlights">
+          <div className="about-item">
+            <h3>🎓 Education</h3>
+            <p>
+              Pursuing my{" "}
+              <strong>Master's in Computer Applications (MCA)</strong> at Indira
+              Gandhi Institute of Technology. Completed my Bachelor's in
+              Computer Science.
+            </p>
+          </div>
+
+          <div className="about-item">
+            <h3>💻 What I Do</h3>
+            <p>
+              Develop responsive and dynamic websites using MongoDB, Express.js,
+              React, and Node.js. Focused on creating seamless user experiences.
+            </p>
+          </div>
+
+          <div className="about-item">
+            <h3>🚀 Passion</h3>
+            <p>
+              Always exploring new technologies, solving complex problems, and
+              contributing to impactful digital products.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
