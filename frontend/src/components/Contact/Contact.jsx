@@ -7,7 +7,7 @@ const contacts = [
   {
     icon: <MdEmail />,
     label: "Email",
-    link: "mailto:rohankumar9969@gmail.com",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=rohankumar9969@gmail.com",
   },
   {
     icon: <FaLinkedin />,
