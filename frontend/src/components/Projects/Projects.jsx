@@ -4,28 +4,28 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const Projects = () => {
   const projects = [
     {
-      title: "Password Manager",
+      title: "YouTube Clone",
       description:
-        "Securely store and manage your passwords with encryption, an intuitive UI, and cross-device sync.",
-      link: "#",
+        "A video streaming platform clone with features like video playback, search, recommendations, and responsive UI built using React and YouTube API.",
+      link: "https://youtube-clone-lilac-gamma.vercel.app/",
     },
     {
-      title: "Notes App",
+      title: "NoteSphere",
       description:
         "Organize your thoughts and to-dos with categorized notes, search functionality, and a distraction-free interface.",
-      link: "#",
+      link: "https://note-sphere-9bmj.vercel.app/",
+    },
+    {
+      title: "EduSubmit",
+      description:
+        "Full CRUD system to manage student records, powered by MongoDB and a responsive React frontend.",
+      link: "https://edusubmit-frontend-35lm.onrender.com/",
     },
     {
       title: "Expense Tracker",
       description:
         "Track income and expenses, generate insights with charts, and set monthly budget goals.",
-      link: "#",
-    },
-    {
-      title: "Student Data Store",
-      description:
-        "Full CRUD system to manage student records, powered by MongoDB and a responsive React frontend.",
-      link: "#",
+      link: "https://finance-app-frontend-y8qk.onrender.com",
     },
   ];
 
