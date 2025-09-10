@@ -1,5 +1,5 @@
 import './HeroSection.css';
-import profilePic from '../../assets/profilePic2.jpg';
+import profilePic from '/profilePic2.jpg';
 import { FaDownload } from "react-icons/fa";
 
 
