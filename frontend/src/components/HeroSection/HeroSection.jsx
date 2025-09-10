@@ -1,5 +1,5 @@
 import './HeroSection.css';
-import profilePic from '../../assets/profilePic.jpg';
+import profilePic from '../../assets/profilePic2.jpg';
 import { FaDownload } from "react-icons/fa";
 
 
@@ -22,7 +22,7 @@ const HeroSection = () => {
         </p>
         <div className="hero-buttons">
           <a
-            href="/Rohan_Kumar_Sahoo_MERN_Developer_Resume.pdf"
+            href="/Rohan_Kumar_Sahoo_Resume.pdf"
             download="Rohan_Kumar_Sahoo_Resume.pdf"
             className="hero-button primary"
           >
