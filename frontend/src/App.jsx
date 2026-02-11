@@ -7,16 +7,21 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
+import { ToastContainer } from 'react-toastify';
+
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Navbar />
-      <HeroSection />
-      <Projects />
-      <Skills />
-      <About />
-      <Contact />
+      <main>
+        <HeroSection />
+        <Projects />
+        <Skills />
+        <About />
+        <Contact />
+      </main>
       <Footer />
+      <ToastContainer position="bottom-right" theme="dark" />
     </div>
   )
 }

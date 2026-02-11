@@ -1,134 +1,18 @@
-/* Global Background (applies everywhere) */
-html, body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-
-  /* Light mode gradient */
-  background: linear-gradient(
-    135deg,
-    #89b0ae 0%,
-    #a2d5c6 30%,
-    #f3eac2 70%,
-    #f6f5f5 100%
-  );
-  background-attachment: fixed;
-
-  color: #1a202c;
-  transition: background 0.6s ease, color 0.6s ease;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* App Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body.dark, html.dark {
-  /* Dark mode gradient */
-  background: linear-gradient(
-    135deg,
-    #0f2027 0%,
-    #203a43 60%,
-    #2c5364 100%
-  );
-  color: #e2e8f0;
+main {
+  flex: 1;
+  width: 100%;
 }
 
-/* Sections */
+/* Ensure sections don't overflow horizontally */
 section {
-  padding: 5rem 2rem;        /* consistent vertical spacing */
-  margin: 0 auto;            /* remove extra gaps */
-  max-width: 1100px;
-  background: transparent;
-  color: inherit;
-  border-bottom: 1px solid rgba(255,255,255,0.1); /* optional divider */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-section:last-of-type {
-  border-bottom: none;
-  padding-bottom: 4rem;      /* footer spacing */
-}
-
-/* Hero */
-.hero-section {
-  text-align: center;
-}
-.hero-section h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1.2rem;
-  background: linear-gradient(90deg, #3b82f6, #9333ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-section p {
-  font-size: 1.3rem;
-  color: inherit;
-}
-
-/* Projects */
-.projects-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  background: linear-gradient(90deg, #3b82f6, #9333ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-/* Skills */
-.skills-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  background: linear-gradient(90deg, #3b82f6, #9333ea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-.skill-card {
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  background: rgba(255,255,255,0.05); /* light glass effect */
-  border: 1px solid rgba(0,0,0,0.1);
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background: transparent;
-  font-size: 0.95rem;
-}
-
-/* Scrollbar */
-body::-webkit-scrollbar {
-  width: 10px;
-}
-body::-webkit-scrollbar-thumb {
-  background: #3b82f6;
-  border-radius: 10px;
-}
-body.dark::-webkit-scrollbar-thumb {
-  background: #a5b4fc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-  .projects-section h2,
-  .skills-section h2 {
-    font-size: 1.8rem;
-  }
-}

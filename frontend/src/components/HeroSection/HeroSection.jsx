@@ -1,37 +1,71 @@
+import React from 'react';
 import './HeroSection.css';
-import profilePic from '/profilePic2.jpg';
-import { FaDownload } from "react-icons/fa";
-
+import { FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
+import { HiDownload } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <section id="home" className="hero-section">
-      <img
-        src={profilePic}
-        alt="Rohan Kumar Sahoo"
-        className="hero-profile-pic"
-      />
-      <div className="hero-content">
-        <h1 className="hero-title">
-          Hi, I'm <span>Rohan Kumar Sahoo</span>
-        </h1>
-        <p className="hero-subtitle">
-          Crafting sleek, responsive, and high-performance web applications with
-          a focus on clean design and exceptional user experience. Always ready
-          to bring ideas to life through code.
-        </p>
-        <div className="hero-buttons">
-          <a
-            href="/Rohan_Kumar_Sahoo_Resume.pdf"
-            download="Rohan_Kumar_Sahoo_Resume.pdf"
-            className="hero-button primary"
+      <div className="hero-bg-accent"></div>
+      <div className="container hero-container">
+        <div className="hero-content">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="hero-badge"
           >
-            <FaDownload style={{ marginRight: "8px" }} />
-            Download Resume
-          </a>
-          <a href="#contact" className="hero-button secondary">
-            Hire Me
-          </a>
+            <span>Available for Work</span>
+          </motion.div>
+
+          <motion.h1
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Hi, I'm Rohan Kumar Sahoo
+            <span className="hero-role">Full Stack Developer</span>
+          </motion.h1>
+
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            I build accessible, pixel-perfect, and performant web experiences.
+            Passionate about crafting software that solves real-world problems.
+          </motion.p>
+
+          <motion.div
+            className="hero-buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <a href="#projects" className="btn btn-primary">
+              View My Work <FaArrowRight />
+            </a>
+            <a href="/Rohan_Kumar_Sahoo_Resume.pdf" download className="btn btn-outline">
+              Download Resume <HiDownload />
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="hero-socials"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <a href="https://github.com/RohanCraft" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/rohan-kumar-sahoo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

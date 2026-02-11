@@ -1,10 +1,13 @@
+import React, { useEffect, useRef } from "react";
 import "./Skills.css";
-import { useEffect, useRef } from "react";
 import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaJava } from "react-icons/fa";
 import { TbBrandTailwind } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiMongodb, SiExpress, SiC, SiCplusplus } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
+
+import AnimatedSection from "../AnimatedSection";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const sectionRef = useRef(null);
@@ -17,10 +20,7 @@ const Skills = () => {
         { name: "C", icon: <SiC className="skill-icon" /> },
         { name: "C++", icon: <SiCplusplus className="skill-icon" /> },
         { name: "Java", icon: <FaJava className="skill-icon" /> },
-        {
-          name: "JavaScript",
-          icon: <IoLogoJavascript className="skill-icon" />,
-        },
+        { name: "JavaScript", icon: <IoLogoJavascript className="skill-icon" /> },
       ],
     },
     {
@@ -31,10 +31,7 @@ const Skills = () => {
         { name: "CSS", icon: <FaCss3 className="skill-icon" /> },
         { name: "React", icon: <FaReact className="skill-icon" /> },
         { name: "Next.js", icon: <RiNextjsFill className="skill-icon" /> },
-        {
-          name: "Tailwind CSS",
-          icon: <TbBrandTailwind className="skill-icon" />,
-        },
+        { name: "Tailwind CSS", icon: <TbBrandTailwind className="skill-icon" /> },
       ],
     },
     {
@@ -52,42 +49,35 @@ const Skills = () => {
     },
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const items = sectionRef.current.querySelectorAll(".skill-category");
-    items.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" className="skills-section" ref={sectionRef}>
-      <h2 className="section-title">My Skills</h2>
-      {skillCategories.map((category) => (
-        <div key={category.category} className="skill-category fade-in-up">
-          <h3 className="category-title">{category.category}</h3>
-          <p className="category-description">{category.description}</p>
-          <div className="skills-list">
-            {category.skills.map((skill) => (
-              <div key={skill.name} className="skill-item">
-                <div className="skill-icon-wrapper">{skill.icon}</div>
-                <span className="skill-name">{skill.name}</span>
+    <AnimatedSection id="skills" className="section skills-section">
+      <div className="container">
+        <h2 className="section-title">Technical Skills</h2>
+        <div className="skills-grid">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.category}
+              className="skill-category-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <h3 className="category-title">{category.category}</h3>
+              <p className="category-description">{category.description}</p>
+              <div className="skills-list">
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="skill-item">
+                    <span className="skill-icon-wrapper">{skill.icon}</span>
+                    <span className="skill-name">{skill.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
-      ))}
-    </section>
+      </div>
+    </AnimatedSection>
   );
 };
 
